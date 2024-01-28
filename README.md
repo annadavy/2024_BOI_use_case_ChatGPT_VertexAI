@@ -1,6 +1,6 @@
 The goal of the experiment is to try to create some more personalised experience for a BOI customer while choosing a savings account.
 
-The technologies used: Chat GPT, Google Vertex AI.
+The technologies used: Chat GPT, Google Cloud with Vertex AI enabled (code was written and ran in Vertex AI workbench).
 
 Chat GPT was instructed to create a fake bank statement for a person living in Ireland 6 months with a positive balance.
 
@@ -18,4 +18,4 @@ Vertex AI was used to create functions to chat with the pdfs :) and compare them
 
 The ultimate goal of the experiment is to reproduce the answer that Chat GPT gave using the Vertex AI framework.
 
-To run the scripts you have to have Google Cloud account with Vertex AI enabled and use Vertex AI workbench or colab.
+
