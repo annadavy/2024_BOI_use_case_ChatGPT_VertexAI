@@ -17,3 +17,5 @@ Chat GPT was instructed to create a recommendation based on the pdf documents an
 Vertex AI was used to create functions to chat with the pdfs :) and compare them.
 
 The ultimate goal of the experiment is to reproduce the answer that Chat GPT gave using the Vertex AI framework.
+
+To run the scripts you have to have Google Cloud account with Vertex AI enabled and use Vertex AI workbench or colab.
