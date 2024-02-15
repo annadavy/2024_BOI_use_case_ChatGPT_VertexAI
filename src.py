@@ -13,7 +13,7 @@ from langchain.llms import VertexAI
 warnings.filterwarnings("ignore")
 
 
-def retrieve_docs(main_url,docs):
+def retrieve_docs(data_folder, main_url,docs):
     """
     Retrieves documents from specified URLs and extracts their first page content.
 
@@ -104,11 +104,3 @@ def generate_answer(pages, context, question):
     )
     return stuff_answer["output_text"]
 
-class ChatAD:
-    
-    def __init__(source,docs):
-        
-        self.source=source
-        self.docs=docs
-        
-    #place holder TBC
