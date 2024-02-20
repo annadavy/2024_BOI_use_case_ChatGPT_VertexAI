@@ -1,13 +1,11 @@
 import urllib
 import warnings
 from pathlib import Path as p
-from pprint import pprint
 
-import pandas as pd
 from langchain import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain
 from langchain.document_loaders import PyPDFLoader
-from langchain.embeddings import VertexAIEmbeddings
+#from langchain.embeddings import VertexAIEmbeddings
 from langchain.llms import VertexAI
 
 warnings.filterwarnings("ignore")
@@ -37,28 +35,26 @@ def retrieve_docs(data_folder, main_url,docs):
     pages=[]
     for doc in docs:
         pdf_url = main_url + doc
-        pdf_file = str(p(data_folder, pdf_url.split("/")[-1]))
+        pdf_file = str(p(data_folder, doc))
 
         urllib.request.urlretrieve(pdf_url, pdf_file)
         pdf_loader = PyPDFLoader(pdf_file)
         page = pdf_loader.load_and_split()
         pages.append(page[0])
         
-    len_pages=len(pages)
-    context = " ".join(str(p.page_content) for p in pages[:len_pages])
+    context = " ".join(str(p.page_content) for p in pages)
     
     return pages,context
 
 def read_docs(data_folder,docs):
     pages=[]
     for doc in docs:
-        pdf_file=str(data_folder) + '/' + doc
+        pdf_file=str(data_folder) + '\\' + doc
         pdf_loader = PyPDFLoader(pdf_file)
         page = pdf_loader.load_and_split()
         pages.append(page[0])
 
-    len_pages=len(pages)
-    context = " ".join(str(p.page_content) for p in pages[:len_pages])
+    context = " ".join(str(p.page_content) for p in pages)
     
     return pages,context
 
@@ -85,7 +81,7 @@ def generate_answer(pages, context, question):
     """   
     
     vertex_llm_text = VertexAI(model_name="text-bison@001")
-    vertex_embeddings = VertexAIEmbeddings(model_name="textembedding-gecko@001") 
+    #vertex_embeddings = VertexAIEmbeddings(model_name="textembedding-gecko@001") 
     
        
     prompt_template = """Answer the question as precise as possible using the provided context. If the answer is
@@ -103,4 +99,17 @@ def generate_answer(pages, context, question):
     {"input_documents": pages, "question": question}, return_only_outputs=True
     )
     return stuff_answer["output_text"]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
