@@ -16,6 +16,5 @@ ChatGPT was instructed to create a recommendation based on the pdf documents and
 
 Vertex AI was used to create functions to chat with the pdfs :) and compare them.
 
-The ultimate goal of the experiment is to reproduce the answer that ChatGPT gave using the Vertex AI framework.
 
 
