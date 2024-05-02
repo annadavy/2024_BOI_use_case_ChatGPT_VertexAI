@@ -1,4 +1,4 @@
-The goal of the experiment is to try to create some more personalised experience for a BOI customer who is choosing a savings account.
+The goal of the experiment is to try to create some more personalised experience for a bank customer who is choosing a savings account.
 
 The technologies used: ChatGPT 4, Google Cloud with Vertex AI enabled (code was written and ran in Vertex AI workbench).
 
